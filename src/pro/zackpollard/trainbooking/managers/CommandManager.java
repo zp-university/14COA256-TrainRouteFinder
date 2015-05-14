@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Zack on 14/05/2015.
+ * @author Zack Pollard
  */
 public class CommandManager {
 
