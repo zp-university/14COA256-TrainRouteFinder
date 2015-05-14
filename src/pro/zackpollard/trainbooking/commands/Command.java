@@ -1,5 +1,8 @@
 package pro.zackpollard.trainbooking.commands;
 
+/**
+ * @author Zack Pollard
+ */
 public abstract class Command {
 
     private final String name;

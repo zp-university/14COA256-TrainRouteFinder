@@ -1,5 +1,8 @@
 package pro.zackpollard.trainbooking.utils;
 
+/**
+ * @author Zack Pollard
+ */
 public class Logger {
 
     private boolean debug;
