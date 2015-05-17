@@ -1,8 +1,10 @@
 package pro.zackpollard.trainbooking.api.managers;
 
+import pro.zackpollard.trainbooking.api.TrainBooking;
 import pro.zackpollard.trainbooking.api.io.Route;
+import pro.zackpollard.trainbooking.api.utils.Logger;
 
-import java.io.File;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,14 +13,17 @@ import java.util.List;
  */
 public class RouteManager {
 
+    public static final String routesDefaultFilePath = "./main.routes";
+
     private List<Route> routes;
-    public static final String routesFilePath = "./main.routes";
+    private final TrainBooking instance;
 
     /**
      * Constructs a new RouteManager. This will initiate the routes List as an ArrayList.
      */
-    public RouteManager() {
+    public RouteManager(TrainBooking instance) {
 
+        this.instance = instance;
         this.routes = new ArrayList<>();
     }
 
@@ -61,7 +66,22 @@ public class RouteManager {
      */
     public boolean saveRoutes(File file) {
 
-        //TODO: Implement saving of routes file. Make routes serializable.
+        try {
+
+            if(!file.exists()) file.createNewFile();
+
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+            out.writeObject(routes);
+            out.flush();
+            out.close();
+
+            instance.getLogger().log(Logger.LoggerLevel.DEBUG, "All currently loaded routes were saved to " + file.getAbsolutePath());
+            return true;
+
+        } catch (IOException e) {
+            instance.getLogger().log(Logger.LoggerLevel.ERROR, "Routes failed to save.", e);
+        }
+
         return false;
     }
 
@@ -73,7 +93,30 @@ public class RouteManager {
      */
     public boolean loadRoutes(File file) {
 
-        //TODO: Implement loading of routes file. Make routes serializable.
+        if(file == null) {
+
+            file = new File(routesDefaultFilePath);
+        }
+
+        if(!file.exists()) {
+
+            instance.getLogger().log(Logger.LoggerLevel.ERROR, "The routes file was not loaded as it did not exist.");
+            return false;
+        }
+
+        try {
+
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+            routes = (List<Route>) in.readObject();
+            in.close();
+
+            instance.getLogger().log(Logger.LoggerLevel.DEBUG, "New routes were loaded from " + file.getAbsolutePath());
+
+            return true;
+        } catch (IOException | ClassNotFoundException e) {
+            instance.getLogger().log(Logger.LoggerLevel.ERROR, "There was an issue whilst loading the routes file.", e);
+        }
+
         return false;
     }
 }
