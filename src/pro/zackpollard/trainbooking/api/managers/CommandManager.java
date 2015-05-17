@@ -1,8 +1,8 @@
-package pro.zackpollard.trainbooking.managers;
+package pro.zackpollard.trainbooking.api.managers;
 
-import pro.zackpollard.trainbooking.TrainBooking;
-import pro.zackpollard.trainbooking.commands.Command;
-import pro.zackpollard.trainbooking.utils.Logger;
+import pro.zackpollard.trainbooking.api.TrainBooking;
+import pro.zackpollard.trainbooking.api.commands.Command;
+import pro.zackpollard.trainbooking.api.utils.Logger;
 
 import java.util.HashMap;
 import java.util.Map;

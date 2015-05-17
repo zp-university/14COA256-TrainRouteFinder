@@ -1,4 +1,4 @@
-package pro.zackpollard.trainbooking.io;
+package pro.zackpollard.trainbooking.api.io;
 
 import java.io.Serializable;
 import java.util.ArrayList;

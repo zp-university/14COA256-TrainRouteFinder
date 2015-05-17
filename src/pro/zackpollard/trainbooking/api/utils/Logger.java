@@ -1,4 +1,4 @@
-package pro.zackpollard.trainbooking.utils;
+package pro.zackpollard.trainbooking.api.utils;
 
 /**
  * @author Zack Pollard

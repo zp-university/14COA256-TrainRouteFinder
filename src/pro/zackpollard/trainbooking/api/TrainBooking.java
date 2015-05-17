@@ -1,7 +1,7 @@
-package pro.zackpollard.trainbooking;
+package pro.zackpollard.trainbooking.api;
 
-import pro.zackpollard.trainbooking.managers.CommandManager;
-import pro.zackpollard.trainbooking.utils.Logger;
+import pro.zackpollard.trainbooking.api.managers.CommandManager;
+import pro.zackpollard.trainbooking.api.utils.Logger;
 
 /**
  * @author Zack Pollard
