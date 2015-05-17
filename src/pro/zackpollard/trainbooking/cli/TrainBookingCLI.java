@@ -1,7 +1,7 @@
 package pro.zackpollard.trainbooking.cli;
 
 /**
- * Created by Zack on 17/05/2015.
+ * @author Zack Pollard
  */
 public class TrainBookingCLI {
 

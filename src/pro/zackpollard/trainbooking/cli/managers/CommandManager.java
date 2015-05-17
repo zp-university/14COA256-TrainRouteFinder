@@ -15,6 +15,11 @@ public class CommandManager {
     private final TrainBooking instance;
     private final Map<String, Command> commandMap;
 
+    /**
+     * Construct a new CommandManager object.
+     *
+     * @param instance The instance of TrainBooking that this class should use.
+     */
     public CommandManager(TrainBooking instance) {
 
         this.instance = instance;

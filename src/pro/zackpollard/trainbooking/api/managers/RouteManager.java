@@ -19,7 +19,9 @@ public class RouteManager {
     private final TrainBooking instance;
 
     /**
-     * Constructs a new RouteManager. This will initiate the routes List as an ArrayList.
+     * Construct a new RouteManager object.
+     *
+     * @param instance The instance of TrainBooking that this class should use.
      */
     public RouteManager(TrainBooking instance) {
 
