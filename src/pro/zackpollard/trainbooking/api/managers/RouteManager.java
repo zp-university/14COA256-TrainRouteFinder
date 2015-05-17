@@ -36,7 +36,7 @@ public class RouteManager {
      * Removes a Route object from the list of routes the program has available.
      *
      * @param route The Route object to be remove from the program.
-     * @return True if the Route existed in the program and was removed, False otherwise.
+     * @return      True if the Route existed in the program and was removed, False otherwise.
      */
     public boolean removeRoute(Route route) {
 
@@ -56,8 +56,8 @@ public class RouteManager {
     /**
      * Save the routes to the file specified.
      *
-     * @param file The file that the routes should be saved to.
-     * @return True if the save operation succeeded, false otherwise.
+     * @param file  The file that the routes should be saved to.
+     * @return      True if the save operation succeeded, false otherwise.
      */
     public boolean saveRoutes(File file) {
 
@@ -68,8 +68,8 @@ public class RouteManager {
     /**
      * Load the routes from the file specified.
      *
-     * @param file The file that the routes should be loaded from.
-     * @return True if the load operation succeeded, false otherwise.
+     * @param file  The file that the routes should be loaded from.
+     * @return      True if the load operation succeeded, false otherwise.
      */
     public boolean loadRoutes(File file) {
 
