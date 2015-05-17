@@ -7,9 +7,6 @@ public class Logger {
 
     private boolean debug = false;
 
-    public Logger() {
-    }
-
     /**
      * Log with the required level and can provide a message.
      *
