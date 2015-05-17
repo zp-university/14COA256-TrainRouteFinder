@@ -64,8 +64,8 @@ public class CommandManager {
     /**
      * Get the command object by it's name or an alias.
      *
-     * @param commandName The name or alias for a command.
-     * @return The command object with the name or alias specified or null if none found.
+     * @param commandName   The name or alias for a command.
+     * @return              The command object with the name or alias specified or null if none found.
      */
     public Command getCommand(String commandName) {
 
