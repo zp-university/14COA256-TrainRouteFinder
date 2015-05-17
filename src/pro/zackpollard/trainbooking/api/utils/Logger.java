@@ -5,7 +5,7 @@ package pro.zackpollard.trainbooking.api.utils;
  */
 public class Logger {
 
-    private boolean debug;
+    private boolean debug = false;
 
     public Logger() {
     }
@@ -30,22 +30,30 @@ public class Logger {
      */
     public void log(LoggerLevel level, String message, Exception e) {
 
+        this.printException(e);
+
         switch (level) {
             case INFO:
                 System.out.println("INFO: " + message);
+                break;
             case WARNING:
                 System.out.println("WARNING: " + message);
+                break;
             case ALERT:
                 System.out.println("ALERT: " + message);
+                break;
             case ERROR:
-                this.printException(e);
                 System.out.println("ERROR: " + message);
+                break;
             case FATAL:
-                this.printException(e);
                 System.out.println("FATAL: " + message);
+                System.exit(2);
+                break;
             case DEBUG:
-                this.printException(e);
                 System.out.println("DEBUG: " + message);
+                break;
+            default:
+                System.out.println("UNKNOWN: " + message);
         }
     }
 
