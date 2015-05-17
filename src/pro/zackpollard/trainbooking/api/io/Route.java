@@ -17,7 +17,7 @@ public class Route implements Serializable {
     private List<String> stops;
 
     /**
-     * Constructor for the Route object.
+     * Constructs a new Route object.
      *
      * @param origin        The name of the origin of the route.
      * @param destination   The name of the destination of the route.
