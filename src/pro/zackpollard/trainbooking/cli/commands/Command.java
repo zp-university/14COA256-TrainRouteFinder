@@ -7,15 +7,15 @@ public abstract class Command {
 
     private final String name;
     private final String[] aliases;
-    private final MenuLevel menuLevel;
+    private final CommandLevel commandLevel;
 
     /**
      * Construct a new command with no aliases.
      *
      * @param name the name of this command
      */
-    public Command(String name, MenuLevel menuLevel) {
-        this(name, menuLevel, null);
+    public Command(String name, CommandLevel commandLevel) {
+        this(name, commandLevel, null);
     }
 
     /**
@@ -24,9 +24,9 @@ public abstract class Command {
      * @param name    primary name of this command
      * @param aliases aliases which map back to this command
      */
-    public Command(String name, MenuLevel menuLevel, String... aliases) {
+    public Command(String name, CommandLevel commandLevel, String... aliases) {
         this.name = name;
-        this.menuLevel = menuLevel;
+        this.commandLevel = commandLevel;
         this.aliases = aliases;
     }
 
@@ -49,13 +49,13 @@ public abstract class Command {
     }
 
     /**
-     * Used to get the MenuLevel of this Command.
+     * Used to get the CommandLevel of this Command.
      *
-     * @return a MenuLevel enum constant which specifies as a way of grouping commands.
+     * @return a CommandLevel enum constant which specifies as a way of grouping commands.
      */
-    public MenuLevel getMenuLevel() {
+    public CommandLevel getCommandLevel() {
 
-        return menuLevel;
+        return commandLevel;
     }
 
     /**

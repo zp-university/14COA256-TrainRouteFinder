@@ -3,7 +3,7 @@ package pro.zackpollard.trainbooking.cli.managers;
 import pro.zackpollard.trainbooking.api.TrainBooking;
 import pro.zackpollard.trainbooking.cli.commands.Command;
 import pro.zackpollard.trainbooking.api.utils.Logger;
-import pro.zackpollard.trainbooking.cli.commands.MenuLevel;
+import pro.zackpollard.trainbooking.cli.commands.CommandLevel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ public class CommandManager {
 
     private final TrainBooking instance;
     private final Map<String, Command> commandMap;
-    private final Map<MenuLevel, List<Command>> levelCommandMap;
+    private final Map<CommandLevel, List<Command>> levelCommandMap;
 
     /**
      * Construct a new CommandManager object.
@@ -42,14 +42,14 @@ public class CommandManager {
 
             commandMap.put(command.getName().toLowerCase(), command);
 
-            if(levelCommandMap.containsKey(command.getMenuLevel())) {
+            if(levelCommandMap.containsKey(command.getCommandLevel())) {
 
-                levelCommandMap.get(command.getMenuLevel()).add(command);
+                levelCommandMap.get(command.getCommandLevel()).add(command);
             } else {
 
                 List<Command> commands = new ArrayList<>();
                 commands.add(command);
-                levelCommandMap.put(command.getMenuLevel(), commands);
+                levelCommandMap.put(command.getCommandLevel(), commands);
             }
 
             if (command.getAliases() != null) {
@@ -93,12 +93,12 @@ public class CommandManager {
     }
 
     /**
-     * Get the Command objects that are associated with a specific MenuLevel.
+     * Get the Command objects that are associated with a specific CommandLevel.
      *
-     * @param level The MenuLevel of the Command objects to be returned.
-     * @return The Command objects that match the specified MenuLevel, null if none were found.
+     * @param level The CommandLevel of the Command objects to be returned.
+     * @return The Command objects that match the specified CommandLevel, null if none were found.
      */
-    public List<Command> getCommands(MenuLevel level) {
+    public List<Command> getCommands(CommandLevel level) {
 
         return levelCommandMap.get(level);
     }
