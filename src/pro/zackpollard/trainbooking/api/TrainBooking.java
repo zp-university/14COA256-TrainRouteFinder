@@ -1,6 +1,7 @@
 package pro.zackpollard.trainbooking.api;
 
 import pro.zackpollard.trainbooking.api.managers.CommandManager;
+import pro.zackpollard.trainbooking.api.managers.RouteManager;
 import pro.zackpollard.trainbooking.api.utils.Logger;
 
 /**
@@ -9,6 +10,7 @@ import pro.zackpollard.trainbooking.api.utils.Logger;
 public class TrainBooking {
 
     private final Logger logger;
+    private final RouteManager routeManager;
     private final CommandManager commandManager;
 
     /**
@@ -18,6 +20,7 @@ public class TrainBooking {
     public TrainBooking() {
 
         this.logger = new Logger();
+        this.routeManager = new RouteManager(this);
         this.commandManager = new CommandManager(this);
     }
 
@@ -39,5 +42,10 @@ public class TrainBooking {
     public CommandManager getCommandManager() {
 
         return commandManager;
+    }
+
+    public RouteManager getRouteManager() {
+
+        return routeManager;
     }
 }
