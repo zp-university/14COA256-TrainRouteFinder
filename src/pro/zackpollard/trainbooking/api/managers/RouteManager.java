@@ -27,6 +27,7 @@ public class RouteManager {
 
         this.instance = instance;
         this.routes = new ArrayList<>();
+        this.loadRoutes(new File(routesDefaultFilePath));
     }
 
     /**

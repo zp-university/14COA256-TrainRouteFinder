@@ -118,6 +118,12 @@ public class MenuManager {
         }
     }
 
+    /**
+     * Used to get the command referenced by the last menu using the provided integer.
+     *
+     * @param menuID The integer that was used to reference a command.
+     * @return The command referenced by that ID or null if it doesn't exist.
+     */
     public Command getCommandFromMenu(int menuID) {
 
         return lastMenu.get(menuID - 1);

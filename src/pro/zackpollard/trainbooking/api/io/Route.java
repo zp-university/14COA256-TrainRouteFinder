@@ -13,8 +13,8 @@ public class Route implements Serializable {
     private static final long serialVersionUID = -1327286908415191626L;
     private String origin;
     private String destination;
-    private double time;
     private double cost;
+    private int duration;
     private List<String> stops;
 
     /**
@@ -22,16 +22,16 @@ public class Route implements Serializable {
      *
      * @param origin        The name of the origin of the route.
      * @param destination   The name of the destination of the route.
-     * @param time          The time to travel the entire route.
      * @param cost          The cost of travelling the route.
+     * @param duration          The duration to travel the entire route.
      * @param stops          The stops that occur on the route.
      */
-    public Route(String origin, String destination, double time, double cost, String... stops) {
+    public Route(String origin, String destination, double cost, int duration, String... stops) {
 
         this.origin = origin;
         this.destination = destination;
-        this.time = time;
         this.cost = cost;
+        this.duration = duration;
         this.stops = new ArrayList<>();
         Collections.addAll(this.stops, stops);
     }
@@ -57,16 +57,6 @@ public class Route implements Serializable {
     }
 
     /**
-     * Getter method for time.
-     *
-     * @return A double of the time of travelling the route.
-     */
-    public double getTime() {
-
-        return time;
-    }
-
-    /**
      * Getter method for cost.
      *
      * @return A double of the cost of travelling the route.
@@ -74,6 +64,16 @@ public class Route implements Serializable {
     public double getCost() {
 
         return cost;
+    }
+
+    /**
+     * Getter method for duration.
+     *
+     * @return A double of the duration of travelling the route.
+     */
+    public long getDuration() {
+
+        return duration;
     }
 
     /**
@@ -114,6 +114,16 @@ public class Route implements Serializable {
     public void setCost(double cost) {
 
         this.cost = cost;
+    }
+
+    /**
+     * Setter for the duration.
+     *
+     * @param duration The new duration of the route.
+     */
+    public void setDuration(int duration) {
+
+        this.duration = duration;
     }
 
     /**
