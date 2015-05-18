@@ -7,7 +7,7 @@ import pro.zackpollard.trainbooking.api.TrainBooking;
  */
 public class TrainBookingCLI {
 
-    private final TrainBooking instance;
+    private final TrainBooking API;
 
     /**
      * This method simply starts the program.
@@ -24,7 +24,7 @@ public class TrainBookingCLI {
      */
     public TrainBookingCLI() {
 
-        this.instance = new TrainBooking();
+        this.API = new TrainBooking();
     }
 
     /**
@@ -36,11 +36,11 @@ public class TrainBookingCLI {
     }
 
     /**
-     * Required to get the instance of the TrainBooking object being used by the CLI.
+     * Required to get the API of the TrainBooking object being used by the CLI.
      *
      * @return the currently used TrainBooking object.
      */
-    public TrainBooking getInstance() {
-        return instance;
+    public TrainBooking getAPI() {
+        return API;
     }
 }
