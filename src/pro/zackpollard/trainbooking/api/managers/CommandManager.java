@@ -5,10 +5,7 @@ import pro.zackpollard.trainbooking.api.commands.Command;
 import pro.zackpollard.trainbooking.api.utils.Logger;
 import pro.zackpollard.trainbooking.api.commands.CommandLevel;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Zack Pollard
@@ -100,6 +97,14 @@ public class CommandManager {
      */
     public List<Command> getCommands(CommandLevel level) {
 
-        return levelCommandMap.get(level);
+        List<Command> commands = levelCommandMap.get(level);
+
+        if(commands != null) {
+
+            return commands;
+        } else {
+
+            return new ArrayList<>();
+        }
     }
 }
