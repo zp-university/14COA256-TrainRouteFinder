@@ -1,7 +1,5 @@
 package pro.zackpollard.trainbooking.cli.commands;
 
-import java.util.Collections;
-
 /**
  * @author Zack Pollard
  */
@@ -48,6 +46,16 @@ public abstract class Command {
      */
     public String[] getAliases() {
         return aliases;
+    }
+
+    /**
+     * Used to get the MenuLevel of this Command.
+     *
+     * @return a MenuLevel enum constant which specifies as a way of grouping commands.
+     */
+    public MenuLevel getMenuLevel() {
+
+        return menuLevel;
     }
 
     /**

@@ -5,7 +5,9 @@ import pro.zackpollard.trainbooking.cli.commands.Command;
 import pro.zackpollard.trainbooking.api.utils.Logger;
 import pro.zackpollard.trainbooking.cli.commands.MenuLevel;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,6 +17,7 @@ public class CommandManager {
 
     private final TrainBooking instance;
     private final Map<String, Command> commandMap;
+    private final Map<MenuLevel, List<Command>> levelCommandMap;
     private MenuLevel menuLevel;
 
     /**
@@ -26,6 +29,7 @@ public class CommandManager {
 
         this.instance = instance;
         this.commandMap = new HashMap<>();
+        this.levelCommandMap = new HashMap<>();
         this.menuLevel = MenuLevel.MAIN;
     }
 
@@ -39,6 +43,16 @@ public class CommandManager {
         if (!commandMap.containsKey(command.getName().toLowerCase())) {
 
             commandMap.put(command.getName().toLowerCase(), command);
+
+            if(levelCommandMap.containsKey(command.getMenuLevel())) {
+
+                levelCommandMap.get(command.getMenuLevel()).add(command);
+            } else {
+
+                List<Command> commands = new ArrayList<>();
+                commands.add(command);
+                levelCommandMap.put(command.getMenuLevel(), commands);
+            }
 
             if (command.getAliases() != null) {
 
@@ -78,5 +92,10 @@ public class CommandManager {
     public Command getCommand(String commandName) {
 
         return commandMap.get(commandName.toLowerCase());
+    }
+
+    public List<Command> getCommands(MenuLevel level) {
+
+        return levelCommandMap.get(level);
     }
 }
