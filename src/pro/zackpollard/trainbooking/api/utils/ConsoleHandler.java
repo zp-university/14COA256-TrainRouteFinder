@@ -69,7 +69,7 @@ public class ConsoleHandler {
 
     public static Date getDate(String prompt) {
 
-        System.out.println(prompt);
+        System.out.print(prompt);
         return getDate();
     }
 }
