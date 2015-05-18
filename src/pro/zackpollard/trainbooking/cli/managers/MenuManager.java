@@ -16,6 +16,7 @@ public class MenuManager {
     private final TrainBookingCLI instance;
     private CommandLevel commandLevel;
     private Stack<CommandLevel> previousCommandLevels;
+    private List<Command> lastMenu;
 
     /**
      * Constructs a new MenuManager object.
@@ -27,6 +28,7 @@ public class MenuManager {
         this.instance = instance;
         this.commandLevel = CommandLevel.MAIN;
         this.previousCommandLevels = new Stack<>();
+        this.lastMenu = new LinkedList<>();
     }
 
     /**
@@ -84,10 +86,12 @@ public class MenuManager {
 
         int count = 0;
         List<String> lines = new LinkedList<>();
+        lastMenu.clear();
 
         for(Command command : instance.getCommandManager().getCommands(this.commandLevel)) {
 
             lines.add(++count + ".) " + command.getName() + " - " + command.getDescription());
+            lastMenu.add(command);
         }
 
         CommandLevel previousLevel = this.getPreviousCommandLevel();
@@ -112,5 +116,10 @@ public class MenuManager {
 
             System.out.println(line);
         }
+    }
+
+    public Command getCommandFromMenu(int menuID) {
+
+        return lastMenu.get(menuID - 1);
     }
 }
