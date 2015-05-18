@@ -1,4 +1,6 @@
-package pro.zackpollard.trainbooking.api.commands;
+package pro.zackpollard.trainbooking.api.command;
+
+import pro.zackpollard.trainbooking.api.command.CommandLevel;
 
 /**
  * @author Zack Pollard
@@ -51,7 +53,7 @@ public abstract class Command {
     /**
      * Used to get the CommandLevel of this Command.
      *
-     * @return a CommandLevel enum constant which specifies as a way of grouping commands.
+     * @return a CommandLevel enum constant which specifies as a way of grouping command.
      */
     public CommandLevel getCommandLevel() {
 

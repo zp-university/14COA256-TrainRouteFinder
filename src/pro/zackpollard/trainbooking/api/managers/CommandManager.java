@@ -1,9 +1,9 @@
 package pro.zackpollard.trainbooking.api.managers;
 
 import pro.zackpollard.trainbooking.api.TrainBookingAPI;
-import pro.zackpollard.trainbooking.api.commands.Command;
+import pro.zackpollard.trainbooking.api.command.Command;
 import pro.zackpollard.trainbooking.api.utils.Logger;
-import pro.zackpollard.trainbooking.api.commands.CommandLevel;
+import pro.zackpollard.trainbooking.api.command.CommandLevel;
 
 import java.util.*;
 
@@ -29,7 +29,7 @@ public class CommandManager {
     }
 
     /**
-     * Register a commands' name and aliases in order for them to be called later.
+     * Register a command' name and aliases in order for them to be called later.
      *
      * @param command The Command object to be registered.
      */

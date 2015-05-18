@@ -1,7 +1,7 @@
 package pro.zackpollard.trainbooking.cli.managers;
 
-import pro.zackpollard.trainbooking.api.commands.Command;
-import pro.zackpollard.trainbooking.api.commands.CommandLevel;
+import pro.zackpollard.trainbooking.api.command.Command;
+import pro.zackpollard.trainbooking.api.command.CommandLevel;
 import pro.zackpollard.trainbooking.cli.TrainBookingCLI;
 
 import java.util.LinkedList;
