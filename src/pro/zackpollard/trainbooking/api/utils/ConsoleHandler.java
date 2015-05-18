@@ -3,6 +3,9 @@ package pro.zackpollard.trainbooking.api.utils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @author Zack Pollard
@@ -47,5 +50,26 @@ public class ConsoleHandler {
 
         System.out.print(prompt);
         return getInt();
+    }
+
+    public static Date getDate() {
+
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        format.setLenient(false);
+
+        while(true) {
+            try {
+                return format.parse(getInput());
+            } catch (ParseException e) {
+            }
+
+            System.out.print("Please re-enter a valid date: ");
+        }
+    }
+
+    public static Date getDate(String prompt) {
+
+        System.out.println(prompt);
+        return getDate();
     }
 }
