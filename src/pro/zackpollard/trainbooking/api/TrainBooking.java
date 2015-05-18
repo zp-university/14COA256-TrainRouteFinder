@@ -27,7 +27,7 @@ public class TrainBooking {
     /**
      * Get the current Logger used in this API session.
      *
-     * @return The Logger object created on construction.
+     * @return The Logger object created for this session.
      */
     public Logger getLogger() {
 
@@ -37,13 +37,18 @@ public class TrainBooking {
     /**
      * Get the CommandManager used in this API session.
      *
-     * @return The CommandManager object created on construction.
+     * @return The CommandManager object created for this session.
      */
     public CommandManager getCommandManager() {
 
         return commandManager;
     }
 
+    /**
+     * Get the RouteManager used in this API session.
+     *
+     * @return The RouteManager object created for this session.
+     */
     public RouteManager getRouteManager() {
 
         return routeManager;
