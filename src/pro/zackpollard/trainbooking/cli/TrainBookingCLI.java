@@ -3,6 +3,7 @@ package pro.zackpollard.trainbooking.cli;
 import pro.zackpollard.trainbooking.api.TrainBookingAPI;
 import pro.zackpollard.trainbooking.api.command.Command;
 import pro.zackpollard.trainbooking.api.utils.ConsoleHandler;
+import pro.zackpollard.trainbooking.cli.commands.PriceCMD;
 import pro.zackpollard.trainbooking.cli.commands.TimeCMD;
 import pro.zackpollard.trainbooking.cli.managers.MenuManager;
 
@@ -35,6 +36,7 @@ public class TrainBookingCLI extends TrainBookingAPI {
     private void registerCommands() {
 
         this.getCommandManager().registerCommand(new TimeCMD(this));
+        this.getCommandManager().registerCommand(new PriceCMD(this));
     }
 
     /**
