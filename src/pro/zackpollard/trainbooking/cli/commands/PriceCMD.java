@@ -63,6 +63,6 @@ public class PriceCMD extends Command {
     @Override
     public String getDescription() {
 
-        return "Find travel time between two stations.";
+        return "Find the cost of travelling between two stations.";
     }
 }
