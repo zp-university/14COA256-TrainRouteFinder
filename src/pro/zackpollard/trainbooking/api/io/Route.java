@@ -13,6 +13,7 @@ public class Route implements Serializable {
     private static final long serialVersionUID = -1327286908415191626L;
     private String origin;
     private String destination;
+    private double time;
     private double cost;
     private List<String> stops;
 
@@ -21,13 +22,15 @@ public class Route implements Serializable {
      *
      * @param origin        The name of the origin of the route.
      * @param destination   The name of the destination of the route.
+     * @param time          The time to travel the entire route.
      * @param cost          The cost of travelling the route.
      * @param stops          The stops that occur on the route.
      */
-    public Route(String origin, String destination, double cost, String... stops) {
+    public Route(String origin, String destination, double time, double cost, String... stops) {
 
         this.origin = origin;
         this.destination = destination;
+        this.time = time;
         this.cost = cost;
         this.stops = new ArrayList<>();
         Collections.addAll(this.stops, stops);
@@ -51,6 +54,16 @@ public class Route implements Serializable {
     public String getDestination() {
 
         return destination;
+    }
+
+    /**
+     * Getter method for time.
+     *
+     * @return A double of the time of travelling the route.
+     */
+    public double getTime() {
+
+        return time;
     }
 
     /**
