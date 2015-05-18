@@ -3,6 +3,7 @@ package pro.zackpollard.trainbooking.cli.managers;
 import pro.zackpollard.trainbooking.api.TrainBooking;
 import pro.zackpollard.trainbooking.cli.commands.Command;
 import pro.zackpollard.trainbooking.api.utils.Logger;
+import pro.zackpollard.trainbooking.cli.commands.MenuLevel;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +15,7 @@ public class CommandManager {
 
     private final TrainBooking instance;
     private final Map<String, Command> commandMap;
+    private MenuLevel menuLevel;
 
     /**
      * Construct a new CommandManager object.
@@ -24,6 +26,7 @@ public class CommandManager {
 
         this.instance = instance;
         this.commandMap = new HashMap<>();
+        this.menuLevel = MenuLevel.MAIN;
     }
 
     /**
