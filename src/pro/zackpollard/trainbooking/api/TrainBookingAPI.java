@@ -7,17 +7,17 @@ import pro.zackpollard.trainbooking.api.utils.Logger;
 /**
  * @author Zack Pollard
  */
-public class TrainBooking {
+public class TrainBookingAPI {
 
     private final Logger logger;
     private final RouteManager routeManager;
     private final CommandManager commandManager;
 
     /**
-     * Constructs a new TrainBooking object which will generate all of the objects needed for the API.
+     * Constructs a new TrainBookingAPI object which will generate all of the objects needed for the API.
      * This should be accessed rather than accessing and constructing all of the other objects individually.
      */
-    public TrainBooking() {
+    public TrainBookingAPI() {
 
         this.logger = new Logger();
         this.routeManager = new RouteManager(this);

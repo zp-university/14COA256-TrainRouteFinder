@@ -1,13 +1,14 @@
 package pro.zackpollard.trainbooking.cli;
 
-import pro.zackpollard.trainbooking.api.TrainBooking;
+import pro.zackpollard.trainbooking.api.TrainBookingAPI;
+import pro.zackpollard.trainbooking.cli.managers.MenuManager;
 
 /**
  * @author Zack Pollard
  */
-public class TrainBookingCLI {
+public class TrainBookingCLI extends TrainBookingAPI {
 
-    private final TrainBooking API;
+    private final MenuManager menuManager;
 
     /**
      * This method simply starts the program.
@@ -24,7 +25,7 @@ public class TrainBookingCLI {
      */
     public TrainBookingCLI() {
 
-        this.API = new TrainBooking();
+        this.menuManager = new MenuManager(this);
     }
 
     /**
@@ -33,14 +34,5 @@ public class TrainBookingCLI {
     public void run() {
 
         //TODO: Run stuff for the CLI.
-    }
-
-    /**
-     * Required to get the API of the TrainBooking object being used by the CLI.
-     *
-     * @return the currently used TrainBooking object.
-     */
-    public TrainBooking getAPI() {
-        return API;
     }
 }

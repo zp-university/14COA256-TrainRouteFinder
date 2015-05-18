@@ -1,6 +1,6 @@
 package pro.zackpollard.trainbooking.api.managers;
 
-import pro.zackpollard.trainbooking.api.TrainBooking;
+import pro.zackpollard.trainbooking.api.TrainBookingAPI;
 import pro.zackpollard.trainbooking.api.commands.Command;
 import pro.zackpollard.trainbooking.api.utils.Logger;
 import pro.zackpollard.trainbooking.api.commands.CommandLevel;
@@ -15,16 +15,16 @@ import java.util.Map;
  */
 public class CommandManager {
 
-    private final TrainBooking instance;
+    private final TrainBookingAPI instance;
     private final Map<String, Command> commandMap;
     private final Map<CommandLevel, List<Command>> levelCommandMap;
 
     /**
      * Construct a new CommandManager object.
      *
-     * @param instance The instance of TrainBooking that this class should use.
+     * @param instance The instance of TrainBookingAPI that this class should use.
      */
-    public CommandManager(TrainBooking instance) {
+    public CommandManager(TrainBookingAPI instance) {
 
         this.instance = instance;
         this.commandMap = new HashMap<>();

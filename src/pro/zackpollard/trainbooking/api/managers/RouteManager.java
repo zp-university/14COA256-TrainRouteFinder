@@ -1,6 +1,6 @@
 package pro.zackpollard.trainbooking.api.managers;
 
-import pro.zackpollard.trainbooking.api.TrainBooking;
+import pro.zackpollard.trainbooking.api.TrainBookingAPI;
 import pro.zackpollard.trainbooking.api.io.Route;
 import pro.zackpollard.trainbooking.api.utils.Logger;
 
@@ -16,14 +16,14 @@ public class RouteManager {
     public static final String routesDefaultFilePath = "./main.routes";
 
     private List<Route> routes;
-    private final TrainBooking instance;
+    private final TrainBookingAPI instance;
 
     /**
      * Construct a new RouteManager object.
      *
-     * @param instance The instance of TrainBooking that this class should use.
+     * @param instance The instance of TrainBookingAPI that this class should use.
      */
-    public RouteManager(TrainBooking instance) {
+    public RouteManager(TrainBookingAPI instance) {
 
         this.instance = instance;
         this.routes = new ArrayList<>();
