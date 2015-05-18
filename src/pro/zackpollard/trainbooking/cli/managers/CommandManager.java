@@ -18,7 +18,6 @@ public class CommandManager {
     private final TrainBooking instance;
     private final Map<String, Command> commandMap;
     private final Map<MenuLevel, List<Command>> levelCommandMap;
-    private MenuLevel menuLevel;
 
     /**
      * Construct a new CommandManager object.
@@ -30,7 +29,6 @@ public class CommandManager {
         this.instance = instance;
         this.commandMap = new HashMap<>();
         this.levelCommandMap = new HashMap<>();
-        this.menuLevel = MenuLevel.MAIN;
     }
 
     /**
@@ -94,6 +92,12 @@ public class CommandManager {
         return commandMap.get(commandName.toLowerCase());
     }
 
+    /**
+     * Get the Command objects that are associated with a specific MenuLevel.
+     *
+     * @param level The MenuLevel of the Command objects to be returned.
+     * @return The Command objects that match the specified MenuLevel, null if none were found.
+     */
     public List<Command> getCommands(MenuLevel level) {
 
         return levelCommandMap.get(level);
