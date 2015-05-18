@@ -1,6 +1,6 @@
 package pro.zackpollard.trainbooking.api;
 
-import pro.zackpollard.trainbooking.cli.managers.CommandManager;
+import pro.zackpollard.trainbooking.api.managers.CommandManager;
 import pro.zackpollard.trainbooking.api.utils.Logger;
 
 /**

@@ -1,9 +1,9 @@
-package pro.zackpollard.trainbooking.cli.managers;
+package pro.zackpollard.trainbooking.api.managers;
 
 import pro.zackpollard.trainbooking.api.TrainBooking;
-import pro.zackpollard.trainbooking.cli.commands.Command;
+import pro.zackpollard.trainbooking.api.commands.Command;
 import pro.zackpollard.trainbooking.api.utils.Logger;
-import pro.zackpollard.trainbooking.cli.commands.CommandLevel;
+import pro.zackpollard.trainbooking.api.commands.CommandLevel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
