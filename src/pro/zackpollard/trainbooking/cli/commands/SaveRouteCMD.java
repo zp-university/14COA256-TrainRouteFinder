@@ -31,11 +31,13 @@ public class SaveRouteCMD extends Command {
             if (defaultSave.toLowerCase().equals("y")) {
 
                 instance.getRouteManager().saveRoutes(new File(RouteManager.routesDefaultFilePath));
+                return;
             } else if(defaultSave.toLowerCase().equals("n")) {
 
                 File saveLocation = new File("./" + ConsoleHandler.getInput("Enter the file name you wish to save to: "));
 
                 instance.getRouteManager().saveRoutes(saveLocation);
+                return;
             } else {
 
                 System.out.println("Invalid response.");
