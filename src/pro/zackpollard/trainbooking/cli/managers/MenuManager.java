@@ -44,11 +44,15 @@ public class MenuManager {
     /**
      * Gives the user the previous CommandLevel, used primarily for the back function in menus.
      */
-    public CommandLevel getPreviousCommandLevel() {
+    public CommandLevel getPreviousCommandLevel(boolean remove) {
 
         if(previousCommandLevels.size() != 0) {
 
-            return previousCommandLevels.pop();
+            if(remove) {
+                return previousCommandLevels.pop();
+            } else {
+                return previousCommandLevels.peek();
+            }
         } else {
 
             return null;
@@ -94,7 +98,7 @@ public class MenuManager {
             lastMenu.add(command);
         }
 
-        CommandLevel previousLevel = this.getPreviousCommandLevel();
+        CommandLevel previousLevel = this.getPreviousCommandLevel(false);
 
         if(previousLevel != null) {
 
