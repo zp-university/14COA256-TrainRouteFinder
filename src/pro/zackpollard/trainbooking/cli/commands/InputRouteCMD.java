@@ -12,7 +12,6 @@ import pro.zackpollard.trainbooking.cli.TrainBookingCLI;
 public class InputRouteCMD extends Command {
 
     private final TrainBookingCLI instance;
-    private static final String tableFormat = "%-20s%-20s%-24s%-10s%-10s";
 
     public InputRouteCMD(TrainBookingCLI instance) {
 
