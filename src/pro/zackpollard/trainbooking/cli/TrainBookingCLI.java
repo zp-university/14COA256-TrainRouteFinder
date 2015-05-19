@@ -63,6 +63,11 @@ public class TrainBookingCLI extends TrainBookingAPI {
         }
     }
 
+    /**
+     * Get the MenuManager used in this API session.
+     *
+     * @return The MenuManager object created for this session.
+     */
     public MenuManager getMenuManager() {
 
         return menuManager;
