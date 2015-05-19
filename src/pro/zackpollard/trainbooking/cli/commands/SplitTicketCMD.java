@@ -6,9 +6,9 @@ import pro.zackpollard.trainbooking.api.io.Route;
 import pro.zackpollard.trainbooking.api.utils.ConsoleHandler;
 import pro.zackpollard.trainbooking.cli.TrainBookingCLI;
 
-import java.text.DecimalFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author Zack Pollard
@@ -16,13 +16,12 @@ import java.util.Date;
 public class SplitTicketCMD extends Command {
 
     private final TrainBookingCLI instance;
-    private final DecimalFormat decimalFormat;
+    private static final String tableFormat = "%-20s%-20s%-24s%-10s%-10s";
 
     public SplitTicketCMD(TrainBookingCLI instance) {
 
-        super("price", CommandLevel.MAIN);
+        super("splitticket", CommandLevel.MAIN);
         this.instance = instance;
-        this.decimalFormat = new DecimalFormat("#.00");
     }
 
     @Override
@@ -30,33 +29,39 @@ public class SplitTicketCMD extends Command {
 
         String origin = ConsoleHandler.getInput("Enter journey origin: ").toLowerCase();
         String destination = ConsoleHandler.getInput("Enter journey destination: ").toLowerCase();
-        Date date = ConsoleHandler.getDate("Enter journey date: ");
 
-        Calendar originalCal = Calendar.getInstance();
-        originalCal.setTime(date);
+        List<List<Route>> possibleRoutes = new ArrayList<>();
 
-        Calendar lastDayCal = Calendar.getInstance();
-        lastDayCal.setTime(date);
-        lastDayCal.set(Calendar.DAY_OF_MONTH, lastDayCal.getActualMaximum(Calendar.DAY_OF_MONTH));
+        for (Route primaryRoute : instance.getRouteManager().getRoutes()) {
 
-        boolean lastDayOfMonth = (originalCal.get(Calendar.DAY_OF_MONTH) == lastDayCal.get(Calendar.DAY_OF_MONTH));
+            if (primaryRoute.getOrigin().toLowerCase().equals(origin)) {
 
-        for(Route route : instance.getRouteManager().getRoutes()) {
+                for (Route secondaryRoute : instance.getRouteManager().getRoutes()) {
 
-            if(route.getOrigin().toLowerCase().equals(origin)) {
+                    if (secondaryRoute.getOrigin().toLowerCase().equals(primaryRoute.getDestination().toLowerCase()) &&
+                            secondaryRoute.getDestination().toLowerCase().equals(destination)) {
 
-                if(route.getDestination().toLowerCase().equals(destination)) {
+                        List<Route> thisRoute = new LinkedList<>();
 
-                    double price = route.getCost();
+                        thisRoute.add(primaryRoute);
+                        thisRoute.add(secondaryRoute);
 
-                    if(lastDayOfMonth) {
-
-                        price = price * 0.9;
+                        possibleRoutes.add(thisRoute);
                     }
-
-                    System.out.println("Journey price would be £" + decimalFormat.format(price));
                 }
             }
+        }
+
+        System.out.format(tableFormat, "Origin Station", "Middle Station", "Destination Station", "Cost", "Duration");
+        System.out.println();
+
+        for(List<Route> routes : possibleRoutes) {
+
+            Route first = routes.get(0);
+            Route second = routes.get(1);
+
+            System.out.format(tableFormat, first.getOrigin(), first.getDestination(), second.getDestination(), first.getCost() + second.getCost(), first.getDuration() + second.getDuration());
+            System.out.println();
         }
     }
 
