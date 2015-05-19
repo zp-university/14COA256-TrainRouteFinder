@@ -71,7 +71,7 @@ public class Route implements Serializable {
      *
      * @return A double of the duration of travelling the route.
      */
-    public long getDuration() {
+    public int getDuration() {
 
         return duration;
     }
