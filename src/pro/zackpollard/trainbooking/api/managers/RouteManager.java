@@ -123,6 +123,11 @@ public class RouteManager {
         return false;
     }
 
+    /**
+     * This method is run on construction and will check if the default routes file exists and if not
+     * it will load the default data and save that data into the  default file. If it does exist it
+     * will simply load the file.
+     */
     public void loadDefaultRoutes() {
 
         File file = new File(routesDefaultFilePath);

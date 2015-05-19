@@ -49,6 +49,8 @@ public class InputRouteCMD extends Command {
                 selectedRoute.addStop(ConsoleHandler.getInput("Enter the name of the stop to add: "));
             }
         }
+
+        ConsoleHandler.waitForEnter("Press the enter key to continue...");
     }
 
     @Override

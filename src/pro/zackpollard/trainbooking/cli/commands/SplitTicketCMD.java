@@ -69,6 +69,8 @@ public class SplitTicketCMD extends Command {
                     first.getStops().size() + second.getStops().size());
             System.out.println();
         }
+
+        ConsoleHandler.waitForEnter("Press the enter key to continue...");
     }
 
     @Override

@@ -6,12 +6,18 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  * @author Zack Pollard
  */
 public class ConsoleHandler {
 
+    /**
+     * Gets the next data that is input into stdin.
+     *
+     * @return A string of the input into stdin.
+     */
     public static String getInput() {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -24,12 +30,24 @@ public class ConsoleHandler {
         }
     }
 
+    /**
+     * Calls getInput() but prints out the prompt to stdout before requesting input from stdin.
+     *
+     * @param prompt The message to be output to stdout.
+     * @return A string of the input into stdin.
+     */
     public static String getInput(String prompt) {
 
         System.out.print(prompt);
         return getInput();
     }
 
+    /**
+     * Gets the next data input into stdin and checks if it is an int.
+     * If input was not an int it will request input again.
+     *
+     * @return An int that is > 0 that the user inputted into stdin.
+     */
     public static int getInt() {
 
         while(true) {
@@ -45,12 +63,25 @@ public class ConsoleHandler {
         }
     }
 
+    /**
+     * Calls getInput() but prints out the prompt to stdout before requesting input from stdin.
+     *
+     * @param prompt The message to be output to stdout.
+     * @return An int that is > 0 that the user inputted into stdin.
+     */
     public static int getInt(String prompt) {
 
         System.out.print(prompt);
         return getInt();
     }
 
+    /**
+     * Gets a date from stdin in the format dd/MM/yyyy.
+     * If the input provided is not in that format or is not a valid date then the method
+     * will request input again until a valid date is provided.
+     *
+     * @return A date object that has been converted from a string the user inputted into stdin.
+     */
     public static Date getDate() {
 
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -67,9 +98,27 @@ public class ConsoleHandler {
         }
     }
 
+    /**
+     * Calls getInput() but prints out the prompt to stdout before requesting input from stdin.
+     *
+     * @param prompt The message to be output to stdout.
+     * @return A date object that has been converted from a string the user inputted into stdin.
+     */
     public static Date getDate(String prompt) {
 
         System.out.print(prompt);
         return getDate();
+    }
+
+    /**
+     * Prints out the message provided into stdout and then halts execution until the user presses the enter key.
+     *
+     * @param prompt The message to be output to stdout.
+     */
+    public static void waitForEnter(String prompt) {
+
+        System.out.print(prompt);
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
     }
 }

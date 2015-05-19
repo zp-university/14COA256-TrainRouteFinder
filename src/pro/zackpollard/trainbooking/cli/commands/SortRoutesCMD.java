@@ -79,6 +79,7 @@ public class SortRoutesCMD extends Command {
                 break;
             default:
                 System.out.println("Invalid selection, returning to main menu.");
+                ConsoleHandler.waitForEnter("Press the enter key to continue...");
                 return;
 
         }
@@ -97,6 +98,8 @@ public class SortRoutesCMD extends Command {
                     route.getStops().size());
             System.out.println();
         }
+
+        ConsoleHandler.waitForEnter("Press the enter key to continue...");
     }
 
     @Override

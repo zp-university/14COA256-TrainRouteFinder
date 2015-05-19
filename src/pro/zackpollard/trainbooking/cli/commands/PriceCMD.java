@@ -58,6 +58,8 @@ public class PriceCMD extends Command {
                 }
             }
         }
+
+        ConsoleHandler.waitForEnter("Press the enter key to continue...");
     }
 
     @Override

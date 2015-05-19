@@ -41,11 +41,13 @@ public class RetrieveRouteCMD extends Command {
                 if(confirmation.toLowerCase().equals("y")) {
 
                     instance.getRouteManager().loadRoutes(loadLocation);
+                    System.out.println("Data was loaded from " + loadLocation + ".");
                 } else {
 
-                    return;
+                    System.out.println("Loading was cancelled, returning to main menu.");
                 }
 
+                ConsoleHandler.waitForEnter("Press the enter key to continue...");
                 return;
             } else {
 

@@ -37,6 +37,7 @@ public class SaveRouteCMD extends Command {
                 File saveLocation = new File("./" + ConsoleHandler.getInput("Enter the file name you wish to save to: "));
 
                 instance.getRouteManager().saveRoutes(saveLocation);
+                ConsoleHandler.waitForEnter("Press the enter key to continue...");
                 return;
             } else {
 

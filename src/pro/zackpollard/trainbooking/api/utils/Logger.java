@@ -27,29 +27,36 @@ public class Logger {
      */
     public void log(LoggerLevel level, String message, Exception e) {
 
-        this.printException(e);
-
         switch (level) {
             case INFO:
                 System.out.println("INFO: " + message);
+                this.printException(e);
                 break;
             case WARNING:
                 System.out.println("WARNING: " + message);
+                this.printException(e);
                 break;
             case ALERT:
                 System.out.println("ALERT: " + message);
+                this.printException(e);
                 break;
             case ERROR:
                 System.out.println("ERROR: " + message);
+                this.printException(e);
                 break;
             case FATAL:
                 System.out.println("FATAL: " + message);
+                this.printException(e);
                 System.exit(2);
                 break;
             case DEBUG:
-                System.out.println("DEBUG: " + message);
+                if(getDebug()) {
+                    System.out.println("DEBUG: " + message);
+                    this.printException(e);
+                }
                 break;
             default:
+                this.printException(e);
                 System.out.println("UNKNOWN: " + message);
         }
     }

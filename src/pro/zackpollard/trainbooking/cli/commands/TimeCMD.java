@@ -36,6 +36,8 @@ public class TimeCMD extends Command {
                 }
             }
         }
+
+        ConsoleHandler.waitForEnter("Press the enter key to continue...");
     }
 
     @Override
