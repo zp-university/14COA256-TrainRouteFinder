@@ -48,9 +48,12 @@ public class TrainBookingCLI extends TrainBookingAPI {
      */
     public void run() {
 
-        menuManager.printMenu();
-        Command command = menuManager.getCommandFromMenu(ConsoleHandler.getInt("Please enter your selection: "));
-        command.execute();
+        while(true) {
+
+            menuManager.printMenu();
+            Command command = menuManager.getCommandFromMenu(ConsoleHandler.getInt("Please enter your selection: "));
+            command.execute();
+        }
     }
 
     public MenuManager getMenuManager() {
