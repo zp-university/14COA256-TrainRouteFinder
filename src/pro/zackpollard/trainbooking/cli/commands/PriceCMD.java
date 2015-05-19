@@ -51,7 +51,7 @@ public class PriceCMD extends Command {
 
                     if(lastDayOfMonth) {
 
-                        price = price * 0.9;
+                        price *= 0.9;
                     }
 
                     System.out.println("Journey price would be £" + decimalFormat.format(price));
