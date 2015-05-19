@@ -63,7 +63,7 @@ public class ConsoleHandler {
             } catch (ParseException e) {
             }
 
-            System.out.print("Please re-enter a valid date: ");
+            System.out.print("Please re-enter a valid date (dd/mm/yyyy): ");
         }
     }
 
