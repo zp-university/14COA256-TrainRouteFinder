@@ -13,7 +13,7 @@ public class ExitCMD extends Command {
 
     public ExitCMD(TrainBookingCLI instance) {
 
-        super("exit", CommandLevel.ADMIN);
+        super("Exit", CommandLevel.ADMIN);
         this.instance = instance;
     }
 

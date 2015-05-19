@@ -13,7 +13,7 @@ public class EndCMD extends Command {
 
     public EndCMD(TrainBookingCLI instance) {
 
-        super("end", CommandLevel.MAIN);
+        super("End", CommandLevel.MAIN);
         this.instance = instance;
     }
 

@@ -11,13 +11,13 @@ import java.io.File;
 /**
  * @author Zack Pollard
  */
-public class LoadRouteCMD extends Command {
+public class RetrieveRouteCMD extends Command {
 
     private final TrainBookingCLI instance;
 
-    public LoadRouteCMD(TrainBookingCLI instance) {
+    public RetrieveRouteCMD(TrainBookingCLI instance) {
 
-        super("loadroute", CommandLevel.ADMIN);
+        super("Retrieve Route", CommandLevel.ADMIN);
         this.instance = instance;
     }
 

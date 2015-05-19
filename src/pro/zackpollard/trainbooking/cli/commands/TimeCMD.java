@@ -16,7 +16,7 @@ public class TimeCMD extends Command {
 
     public TimeCMD(TrainBookingCLI instance) {
 
-        super("time", CommandLevel.MAIN);
+        super("Time", CommandLevel.MAIN);
         this.instance = instance;
     }
 

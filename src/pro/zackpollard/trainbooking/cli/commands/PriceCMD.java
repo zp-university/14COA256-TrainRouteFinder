@@ -20,7 +20,7 @@ public class PriceCMD extends Command {
 
     public PriceCMD(TrainBookingCLI instance) {
 
-        super("price", CommandLevel.MAIN);
+        super("Price", CommandLevel.MAIN);
         this.instance = instance;
         this.decimalFormat = new DecimalFormat("#.00");
     }

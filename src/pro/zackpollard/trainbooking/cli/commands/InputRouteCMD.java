@@ -16,7 +16,7 @@ public class InputRouteCMD extends Command {
 
     public InputRouteCMD(TrainBookingCLI instance) {
 
-        super("inputroute", CommandLevel.ADMIN);
+        super("Input Route", CommandLevel.ADMIN);
         this.instance = instance;
     }
 

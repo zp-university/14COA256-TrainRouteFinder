@@ -13,7 +13,7 @@ public class AdminCMD extends Command {
 
     public AdminCMD(TrainBookingCLI instance) {
 
-        super("admin", CommandLevel.MAIN);
+        super("Admin", CommandLevel.MAIN);
         this.instance = instance;
     }
 

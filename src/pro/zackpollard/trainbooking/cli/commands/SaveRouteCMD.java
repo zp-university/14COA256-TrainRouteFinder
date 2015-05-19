@@ -17,7 +17,7 @@ public class SaveRouteCMD extends Command {
 
     public SaveRouteCMD(TrainBookingCLI instance) {
 
-        super("saveroute", CommandLevel.ADMIN);
+        super("Save Route", CommandLevel.ADMIN);
         this.instance = instance;
     }
 

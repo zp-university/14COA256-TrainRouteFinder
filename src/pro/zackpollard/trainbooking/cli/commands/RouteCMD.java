@@ -17,7 +17,7 @@ public class RouteCMD extends Command {
 
     public RouteCMD(TrainBookingCLI instance) {
 
-        super("route", CommandLevel.MAIN);
+        super("Route", CommandLevel.MAIN);
         this.instance = instance;
     }
 

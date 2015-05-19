@@ -43,7 +43,7 @@ public class TrainBookingCLI extends TrainBookingAPI {
         this.getCommandManager().registerCommand(new AdminCMD(this));
         this.getCommandManager().registerCommand(new InputRouteCMD(this));
         this.getCommandManager().registerCommand(new SaveRouteCMD(this));
-        this.getCommandManager().registerCommand(new LoadRouteCMD(this));
+        this.getCommandManager().registerCommand(new RetrieveRouteCMD(this));
 
         this.getCommandManager().registerCommand(new ExitCMD(this));
         this.getCommandManager().registerCommand(new EndCMD(this));
@@ -57,7 +57,8 @@ public class TrainBookingCLI extends TrainBookingAPI {
         while(true) {
 
             menuManager.printMenu();
-            Command command = menuManager.getCommandFromMenu(ConsoleHandler.getInt("Please enter your selection: "));
+            System.out.println();
+            Command command = menuManager.getCommandFromMenu(ConsoleHandler.getInt("Please enter the ID of your selection: "));
             command.execute();
         }
     }

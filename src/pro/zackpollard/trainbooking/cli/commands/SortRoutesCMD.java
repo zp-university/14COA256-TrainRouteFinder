@@ -18,7 +18,7 @@ public class SortRoutesCMD extends Command {
 
     public SortRoutesCMD(TrainBookingCLI instance) {
 
-        super("sortroutes", CommandLevel.MAIN);
+        super("Sort Routes", CommandLevel.MAIN);
         this.instance = instance;
     }
 
@@ -92,7 +92,7 @@ public class SortRoutesCMD extends Command {
                     tableFormat,
                     route.getOrigin(),
                     route.getDestination(),
-                    route.getCost(),
+                    "\u00A3" + route.getCost(),
                     route.getDuration(),
                     route.getStops().size());
             System.out.println();
@@ -102,6 +102,6 @@ public class SortRoutesCMD extends Command {
     @Override
     public String getDescription() {
 
-        return "Find alternative ways of travelling between two stations.";
+        return "Sort routes by certain criteria and display them in ascending or descending order.";
     }
 }
