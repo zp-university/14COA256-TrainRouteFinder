@@ -37,9 +37,9 @@ public class TrainBookingCLI extends TrainBookingAPI {
         this.getCommandManager().registerCommand(new TimeCMD(this));
         this.getCommandManager().registerCommand(new PriceCMD(this));
         this.getCommandManager().registerCommand(new RouteCMD(this));
-        this.getCommandManager().registerCommand(new AdminCMD(this));
         this.getCommandManager().registerCommand(new SplitTicketCMD(this));
 
+        this.getCommandManager().registerCommand(new AdminCMD(this));
         this.getCommandManager().registerCommand(new InputRouteCMD(this));
         this.getCommandManager().registerCommand(new SaveRouteCMD(this));
 
