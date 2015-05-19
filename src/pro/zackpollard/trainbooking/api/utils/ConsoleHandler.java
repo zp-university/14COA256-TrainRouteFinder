@@ -32,18 +32,17 @@ public class ConsoleHandler {
 
     public static int getInt() {
 
-        int myInt = -1;
-
-        while(myInt < 0) {
+        while(true) {
 
             try {
 
-                myInt = Integer.parseInt(getInput());
+                int myInt = Integer.parseInt(getInput());
+                if(myInt > 0) return myInt;
             } catch (NumberFormatException e) {
             }
-        }
 
-        return myInt;
+            System.out.print("Please re-enter a valid positive Integer: ");
+        }
     }
 
     public static int getInt(String prompt) {
@@ -58,6 +57,7 @@ public class ConsoleHandler {
         format.setLenient(false);
 
         while(true) {
+
             try {
                 return format.parse(getInput());
             } catch (ParseException e) {
