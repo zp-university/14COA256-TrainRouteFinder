@@ -3,10 +3,13 @@ package pro.zackpollard.trainbooking.cli;
 import pro.zackpollard.trainbooking.api.TrainBookingAPI;
 import pro.zackpollard.trainbooking.api.command.Command;
 import pro.zackpollard.trainbooking.api.utils.ConsoleHandler;
+import pro.zackpollard.trainbooking.cli.commands.AdminCMD;
 import pro.zackpollard.trainbooking.cli.commands.PriceCMD;
 import pro.zackpollard.trainbooking.cli.commands.RouteCMD;
 import pro.zackpollard.trainbooking.cli.commands.TimeCMD;
 import pro.zackpollard.trainbooking.cli.managers.MenuManager;
+
+import java.awt.*;
 
 /**
  * @author Zack Pollard
@@ -39,6 +42,7 @@ public class TrainBookingCLI extends TrainBookingAPI {
         this.getCommandManager().registerCommand(new TimeCMD(this));
         this.getCommandManager().registerCommand(new PriceCMD(this));
         this.getCommandManager().registerCommand(new RouteCMD(this));
+        this.getCommandManager().registerCommand(new AdminCMD(this));
     }
 
     /**
@@ -49,5 +53,10 @@ public class TrainBookingCLI extends TrainBookingAPI {
         menuManager.printMenu();
         Command command = menuManager.getCommandFromMenu(ConsoleHandler.getInt("Please enter your selection: "));
         command.execute();
+    }
+
+    public MenuManager getMenuManager() {
+
+        return menuManager;
     }
 }
