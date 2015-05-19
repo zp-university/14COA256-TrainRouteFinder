@@ -6,10 +6,6 @@ import pro.zackpollard.trainbooking.api.io.Route;
 import pro.zackpollard.trainbooking.api.utils.ConsoleHandler;
 import pro.zackpollard.trainbooking.cli.TrainBookingCLI;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * @author Zack Pollard
  */

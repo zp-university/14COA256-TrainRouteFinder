@@ -1,7 +1,5 @@
 package pro.zackpollard.trainbooking.api.command;
 
-import pro.zackpollard.trainbooking.api.command.CommandLevel;
-
 /**
  * @author Zack Pollard
  */
