@@ -98,16 +98,6 @@ public class MenuManager {
             lastMenu.add(command);
         }
 
-        CommandLevel previousLevel = this.getPreviousCommandLevel(false);
-
-        if(previousLevel != null) {
-
-            lines.add(++count + ".) Return to previous menu.");
-        } else {
-
-            lines.add(++count + ".) Exit the application.");
-        }
-
         return lines;
     }
 
