@@ -79,7 +79,8 @@ public class ConsoleHandler {
     /**
      * Gets a date from stdin in the format dd/MM/yyyy.
      * If the input provided is not in that format or is not a valid date then the method
-     * will request input again until a valid date is provided.
+     * will request input again until a valid date is provided. This method will not accept
+     * input of dates that are in the past.
      *
      * @return A date object that has been converted from a string the user inputted into stdin.
      */
