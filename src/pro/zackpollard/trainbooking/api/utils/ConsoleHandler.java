@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -90,7 +91,22 @@ public class ConsoleHandler {
         while(true) {
 
             try {
-                return format.parse(getInput());
+                Date date = format.parse(getInput());
+
+                Calendar originalCal = Calendar.getInstance();
+                originalCal.setTime(date);
+
+                Calendar yesterdayCal = Calendar.getInstance();
+                yesterdayCal.add(Calendar.DAY_OF_YEAR, -1);
+
+                if(originalCal.get(Calendar.YEAR) == yesterdayCal.get(Calendar.YEAR) &&
+                        originalCal.get(Calendar.DAY_OF_YEAR) == yesterdayCal.get(Calendar.DAY_OF_YEAR)) {
+
+                    System.out.println("You can not enter a date that is in the past.");
+                } else {
+
+                    return date;
+                }
             } catch (ParseException e) {
             }
 
