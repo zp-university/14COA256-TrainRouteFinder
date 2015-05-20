@@ -27,11 +27,15 @@ public class RouteCMD extends Command {
         String origin = ConsoleHandler.getInput("Enter journey origin: ").toLowerCase();
         String destination = ConsoleHandler.getInput("Enter journey destination: ").toLowerCase();
 
+        boolean routeFound = false;
+
         for(Route route : instance.getRouteManager().getRoutes()) {
 
             if(route.getOrigin().toLowerCase().equals(origin)) {
 
                 if(route.getDestination().toLowerCase().equals(destination)) {
+
+                    routeFound = true;
 
                     List<String> stops = route.getStops();
 
@@ -51,6 +55,11 @@ public class RouteCMD extends Command {
                     System.out.println("Destination: " + route.getDestination());
                 }
             }
+        }
+
+        if(!routeFound) {
+
+            System.out.println("No route found between those stations.");
         }
 
         ConsoleHandler.waitForEnter("Press the enter key to continue...");

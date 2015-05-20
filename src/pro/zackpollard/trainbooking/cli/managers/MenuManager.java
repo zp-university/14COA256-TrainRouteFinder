@@ -120,6 +120,11 @@ public class MenuManager {
      */
     public Command getCommandFromMenu(int menuID) {
 
-        return lastMenu.get(menuID - 1);
+        if(lastMenu.size() >= menuID) {
+
+            return lastMenu.get(menuID - 1);
+        }
+
+        return null;
     }
 }

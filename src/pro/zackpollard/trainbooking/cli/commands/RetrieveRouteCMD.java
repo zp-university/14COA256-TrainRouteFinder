@@ -31,6 +31,7 @@ public class RetrieveRouteCMD extends Command {
             if (defaultSave.toLowerCase().equals("y")) {
 
                 instance.getRouteManager().loadRoutes(new File(RouteManager.routesDefaultFilePath));
+                ConsoleHandler.waitForEnter("Press the enter key to continue...");
                 return;
             } else if(defaultSave.toLowerCase().equals("n")) {
 

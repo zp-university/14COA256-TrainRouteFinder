@@ -40,6 +40,7 @@ public class PriceCMD extends Command {
         lastDayCal.set(Calendar.DAY_OF_MONTH, lastDayCal.getActualMaximum(Calendar.DAY_OF_MONTH));
 
         boolean lastDayOfMonth = (originalCal.get(Calendar.DAY_OF_MONTH) == lastDayCal.get(Calendar.DAY_OF_MONTH));
+        boolean routeFound = false;
 
         for(Route route : instance.getRouteManager().getRoutes()) {
 
@@ -47,6 +48,7 @@ public class PriceCMD extends Command {
 
                 if(route.getDestination().toLowerCase().equals(destination)) {
 
+                    routeFound = true;
                     double price = route.getCost();
 
                     if(lastDayOfMonth) {
@@ -54,9 +56,14 @@ public class PriceCMD extends Command {
                         price *= 0.9;
                     }
 
-                    System.out.println("Journey price would be £" + decimalFormat.format(price));
+                    System.out.println("Journey price would be \u00A3" + decimalFormat.format(price));
                 }
             }
+        }
+
+        if(!routeFound) {
+
+            System.out.println("No route found between those stations.");
         }
 
         ConsoleHandler.waitForEnter("Press the enter key to continue...");

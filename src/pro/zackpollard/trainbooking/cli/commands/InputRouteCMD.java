@@ -25,6 +25,8 @@ public class InputRouteCMD extends Command {
         String origin = ConsoleHandler.getInput("Enter journey origin: ").toLowerCase();
         String destination = ConsoleHandler.getInput("Enter journey destination: ").toLowerCase();
 
+        boolean routeFound = false;
+
         Route selectedRoute = null;
 
         for (Route route : instance.getRouteManager().getRoutes()) {
@@ -47,6 +49,9 @@ public class InputRouteCMD extends Command {
 
                 selectedRoute.addStop(ConsoleHandler.getInput("Enter the name of the stop to add: "));
             }
+        } else {
+
+            System.out.println("No route found between those stations.");
         }
 
         ConsoleHandler.waitForEnter("Press the enter key to continue...");

@@ -26,15 +26,23 @@ public class TimeCMD extends Command {
         String origin = ConsoleHandler.getInput("Enter journey origin: ").toLowerCase();
         String destination = ConsoleHandler.getInput("Enter journey destination: ").toLowerCase();
 
+        boolean routeFound = false;
+
         for(Route route : instance.getRouteManager().getRoutes()) {
 
             if(route.getOrigin().toLowerCase().equals(origin)) {
 
                 if(route.getDestination().toLowerCase().equals(destination)) {
 
+                    routeFound = true;
                     System.out.println("Journey time would be " + Utils.parseStringTimeInfo("%hh% hours and %mm% minutes.", route.getDuration()));
                 }
             }
+        }
+
+        if(!routeFound) {
+
+            System.out.println("No route found between those stations.");
         }
 
         ConsoleHandler.waitForEnter("Press the enter key to continue...");

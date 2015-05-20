@@ -16,7 +16,7 @@ import java.util.List;
 public class SplitTicketCMD extends Command {
 
     private final TrainBookingCLI instance;
-    private static final String tableFormat = "%-20s%-20s%-24s%-10s%-10s%-10s";
+    private static final String tableFormat = "%-16s%-16s%-24s%-8s%-10s%-8s";
 
     public SplitTicketCMD(TrainBookingCLI instance) {
 
@@ -52,6 +52,7 @@ public class SplitTicketCMD extends Command {
             }
         }
 
+        System.out.println();
         System.out.format(tableFormat, "Origin Station", "Middle Station", "Destination Station", "Cost", "Duration", "Stops");
         System.out.println();
 
@@ -64,7 +65,7 @@ public class SplitTicketCMD extends Command {
                     first.getOrigin(),
                     first.getDestination(),
                     second.getDestination(),
-                    "\u00A3" + first.getCost() + second.getCost(),
+                    "\u00A3" + (first.getCost() + second.getCost()),
                     first.getDuration() + second.getDuration(),
                     first.getStops().size() + second.getStops().size());
             System.out.println();

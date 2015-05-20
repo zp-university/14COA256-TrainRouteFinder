@@ -2,6 +2,7 @@ package pro.zackpollard.trainbooking.api.managers;
 
 import pro.zackpollard.trainbooking.api.TrainBookingAPI;
 import pro.zackpollard.trainbooking.api.io.Route;
+import pro.zackpollard.trainbooking.api.utils.ConsoleHandler;
 import pro.zackpollard.trainbooking.api.utils.Logger;
 
 import java.io.*;
@@ -78,7 +79,7 @@ public class RouteManager {
             out.flush();
             out.close();
 
-            instance.getLogger().log(Logger.LoggerLevel.DEBUG, "All currently loaded routes were saved to " + file.getAbsolutePath());
+            instance.getLogger().log(Logger.LoggerLevel.INFO, "All currently loaded routes were saved to " + file.getAbsolutePath());
             return true;
 
         } catch (IOException e) {
@@ -113,7 +114,7 @@ public class RouteManager {
             routes = (List<Route>) in.readObject();
             in.close();
 
-            instance.getLogger().log(Logger.LoggerLevel.DEBUG, "New routes were loaded from " + file.getAbsolutePath());
+            instance.getLogger().log(Logger.LoggerLevel.INFO, "New routes were loaded from " + file.getAbsolutePath());
 
             return true;
         } catch (IOException | ClassNotFoundException e) {
@@ -156,6 +157,8 @@ public class RouteManager {
             routes.add(new Route("York", "Derby", 11.2, 45));
 
             this.saveRoutes(new File(routesDefaultFilePath));
+
+            System.out.println("Default routes loaded and saved to disk.");
         } else {
 
             this.loadRoutes(file);
