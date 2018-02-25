@@ -1,0 +1,8 @@
+pro.zackpollard.trainbooking.api
+pro.zackpollard.trainbooking.api.command
+pro.zackpollard.trainbooking.api.io
+pro.zackpollard.trainbooking.api.managers
+pro.zackpollard.trainbooking.api.utils
+pro.zackpollard.trainbooking.cli
+pro.zackpollard.trainbooking.cli.commands
+pro.zackpollard.trainbooking.cli.managers
